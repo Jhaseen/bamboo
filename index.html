@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Attha</title>
+</head>
+
+
+<body>
+
+    <h1>Happy Birthday, Attha!</h1>
+
+    <p>A little something made just for you.</p>
+
+    <button onclick="showSurprise()">
+    Open Your Surprise
+    </button>
+    <p id="surprise"></p>
+    
+<section class="admiration">
+
+    <h2>Things I Admire About You</h2>
+
+    <div class="quality">
+        <h3>Your Knowledge</h3>
+        <p>Your ability to learn things quick.</p>
+    </div>
+
+    <div class="quality">
+        <h3>Your Forgiveness </h3>
+        <p>Your ability to forgive every mistake I do.</p>
+    </div>
+
+    <div class="quality">
+        <h3>Your Presence</h3>
+        <p>Having you as an important part of my life.</p>
+    </div>
+
+</section>
+
+<section class="birthday-wishes">
+    <h2>A Few Wishes for You...</h2>
+
+    <p id="wish-text">
+        Some wishes are waiting just for you.
+    </p>
+
+    <button onclick="revealWish()">
+        Reveal a Wish
+    </button>
+
+</section>
+
+<section class="final-note">
+    <h2>A Note to Remember</h2>
+
+    <p>
+        I may not know how you feel each day but I definitely
+      know your hardwork everyday despite your pain,as i already said 
+      this soul you brought to this world will forever be thankful to you.
+    </p>
+
+    <p>
+        Thank you for being an important part of my life.
+    </p>
+
+    <h3>Happy Birthday, Attha!</h3>
+</section>
+
+<script>
+
+    
+function showSurprise() {
+
+    document.getElementById("surprise").innerHTML = `
+        <div class="message-card">
+            <h2>To My Dear Mr.Father</h2>
+
+            <p>
+               I just want you know that I am very grateful
+               for all the luxury you have made me experience in my 
+               seventeen years of life on this beautiful planet.
+            </p>
+
+            <p>
+                Today, I just want to remind you
+                how much you have made my life comfortable.
+            </p>
+
+            <h3>Happy Birthday Attha! ❤️</h3>
+        </div>
+    `;
+
+}
+
+
+const wishes = [
+    "May Allah bless you  with peace, good health and happiness.",
+    
+    "May all your hard work bring you beautiful rewards.",
+    
+    "May you always have reasons to smile and moments worth remembering.",
+    
+    "May this new start bring you countless blessings and wonderful experiences."
+];
+
+let currentWish = 0;
+
+function revealWish() {
+    if (currentWish < wishes.length) {
+        const wishElement = document.getElementById("wish-text");
+
+wishElement.innerHTML = wishes[currentWish];
+
+wishElement.classList.remove("wish-animation");
+
+void wishElement.offsetWidth;
+
+wishElement.classList.add("wish-animation");
+
+        currentWish++;
+    } else {
+        document.getElementById("wish-text").innerHTML =
+            "And above all, may you always know how much you are important in my life. Happy Birthday, Mr.Father!";
+    }
+}
+
+</script>
+
+</body>
+<style>
+
+    body {
+        background-color: #101C2C;
+        color: #F5F0E6;
+        font-family: Georgia, serif;
+        text-align: center;
+        padding: 80px 20px;
+    }
+
+    h1 {
+        color: #D6B875;
+        font-size: 42px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    button {
+        background-color: #D6B875;
+        color: #101C2C;
+        border: none;
+        padding: 14px 25px;
+        font-size: 16px;
+        border-radius: 6px;
+        margin-top: 25px;
+    }
+
+.message-card {
+    margin-top: 35px;
+    padding: 25px;
+    border: 1px solid #D6B875;
+    border-radius: 12px;
+    background-color: #1B2A3D;
+}
+
+.message-card h2 {
+    color: #D6B875;
+}
+
+.message-card p {
+    color: #F5F0E6;
+    line-height: 1.8;
+}
+
+.message-card h3 {
+    color: #D6B875;
+}
+
+.admiration {
+    margin-top: 65px;
+}
+
+.admiration h2 {
+    color: #D6B875;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.quality {
+    background-color: #1B2A3D;
+    border-left: 3px solid #D6B875;
+    padding: 18px;
+    margin: 18px auto;
+    max-width: 400px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.quality h3 {
+    color: #D6B875;
+}
+
+.quality p {
+    color: #F5F0E6;
+    font-size: 16px;
+}
+
+.birthday-wishes {
+    margin-top: 65px;
+    padding: 25px;
+    background-color: #1B2A3D;
+    border: 1px solid #D6B875;
+    border-radius: 12px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.birthday-wishes h2 {
+    color: #D6B875;
+    font-size: 25px;
+}
+
+.birthday-wishes p {
+    color: #F5F0E6;
+    line-height: 1.8;
+    min-height: 55px;
+}
+
+.birthday-wishes button {
+    background-color: #D6B875;
+    color: #101C2C;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+@keyframes wishReveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wish-animation {
+    animation: wishReveal 0.7s ease;
+}
+
+.final-note {
+    margin: 70px auto 30px;
+    padding: 30px 20px;
+    max-width: 450px;
+    text-align: center;
+    border-top: 1px solid #D6B875;
+}
+
+.final-note h2 {
+    color: #D6B875;
+    font-size: 25px;
+}
+
+.final-note p {
+    color: #F5F0E6;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-top: 20px;
+}
+
+.final-note h3 {
+    color: #D6B875;
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+</style>
+
+</html>
